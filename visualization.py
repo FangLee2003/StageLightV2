@@ -21,7 +21,8 @@ class Visualization:
         plt.xlabel(xlabel)
         plt.margins(0)
         plt.ylim(min_val - 0.05 * abs(min_val), max_val + 0.05 * abs(max_val))
-        fig = plt.gcf()
+        # Set the y-axis limit to be less than 5% of the min data value and more than 5% the max data value 
+        fig = plt.gcf() # Get current figure
         fig.set_size_inches(20, 11.25)
         fig.show()
         fig.savefig(os.path.join(self._path, 'plot_'+filename+'.png'), dpi=self._dpi)
